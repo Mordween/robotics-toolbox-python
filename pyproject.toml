@@ -23,6 +23,7 @@ dependencies = [
     "rtb-data",
     "progress",
     "typing_extensions",
+    "pybullet",
 ]
 
 license = { file = "LICENSE" }
