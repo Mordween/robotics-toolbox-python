@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<robot name="lite6" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find urdf)/lite6.urdf.xacro"/>
+  <xacro:lite6 prefix=""  
+	joint1_lower_limit="${-2.0*3.14159}"  joint1_upper_limit="${2.0*3.14159}"
+    joint2_lower_limit="${-2.61799}"  joint2_upper_limit="${2.61799}"
+    joint3_lower_limit="${-0.061087}"  joint3_upper_limit="${5.235988}"
+    joint4_lower_limit="${-2.0*3.14159}"  joint4_upper_limit="${2.0*3.14159}"
+    joint5_lower_limit="${-2.1642}"  joint5_upper_limit="${2.1642}"
+    joint6_lower_limit="${-2.0*3.14159}"  joint6_upper_limit="${2.0*3.14159}"/>
+</robot>
