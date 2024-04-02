@@ -3,7 +3,7 @@
 import numpy as np
 from roboticstoolbox.robot.Robot import Robot
 from spatialmath import SE3
-import roboticstoolbox as rtb
+
 
 class Lite6(Robot):
     """
@@ -16,7 +16,7 @@ class Lite6(Robot):
     .. runblock:: pycon
 
         >>> import roboticstoolbox as rtb
-        >>> robot = rtb.models.URDF.Panda()
+        >>> robot = rtb.models.URDF.Lite6()
         >>> print(robot)
 
     Defined joint configurations are:
@@ -33,17 +33,19 @@ class Lite6(Robot):
     def __init__(self):
 
         links, name, urdf_string, urdf_filepath = self.URDF_read(
-            "ufactory_description/lite6/urdf/lite6.urdf.xacro"
+            "ufactory_description/lite6/urdf/lite6.urdf"
         )
 
         super().__init__(
             links,
             name=name,
             manufacturer="Ufactory",
+            gripper_links=links[7],
             urdf_string=urdf_string,
             urdf_filepath=urdf_filepath,
         )
 
+        self.grippers[0].tool = SE3(0, 0, 0.0836)
 
         self.qdlim = np.array(
             [2*np.pi, 2.61799, 5.235988, 2*np.pi, 2.1642, 2.0*np.pi]
