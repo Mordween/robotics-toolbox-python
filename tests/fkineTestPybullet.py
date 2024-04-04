@@ -51,6 +51,7 @@ class RobotControl():
             p.stepSimulation()
             time.sleep(0.01)
 
+
 physicsClient = p.connect(p.GUI)#or p.DIRECT for non-graphical version
 p.resetSimulation()
 p.setAdditionalSearchPath(pybullet_data.getDataPath()) #optionally

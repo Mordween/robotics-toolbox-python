@@ -64,8 +64,8 @@ if __name__ =="__main__":
 
     planeId = p.loadURDF("plane.urdf")
     startPos = [0,0,0]
-    robotPos = [0.5,1,0.63]
-    duckPos = [0.5,0.2,0.68]
+    robotPos = [0,0,0.63]
+    duckPos = [0.15,-0.2,0.68]
     startOrientation = p.getQuaternionFromEuler([0,0,0])
     robotId = p.loadURDF("../rtb-data/rtbdata/xacro/ufactory_description/lite6/urdf/lite6.urdf",robotPos, startOrientation, useFixedBase = True)
     tableId = p.loadURDF("../urdf-object/table.urdf",startPos, startOrientation, useFixedBase = True)
@@ -87,18 +87,21 @@ if __name__ =="__main__":
     position = np.zeros(p.getNumJoints(robotId))
     motors = range(p.getNumJoints(robotId))
 
-    """positionX = [0.5, 0.2, 0.2]
-    positionY = [0.2, 0.2, -0.2]
-    positionZ = [0.5, 0.5, 0.5]"""
+    positionX = [0.15, 0.15, 0.35]
+    positionY = [-0.2, -0.2, 0.2]
+    positionZ = [0.05, 0.4, 0.2]
+    step = [500, 500, 500]
 
-    """positionX = [0.1, 0.1, 0.1, 0.3, 0.5]
+    """
+    positionX = [0.1, 0.1, 0.1, 0.3, 0.5]
     positionY = [0.1, 0.1, 0.3, 0.5, 0.5]
     positionZ = [0.1, 0.4, 0.4, 0.4, 0.4]"""
 
+    """ 
     positionX = [0.1, 0.1, 0.1, 0.1, 0.1]
     positionY = [0.1, 0.1, 0.1, 0.1, 0.1]
     positionZ = [0.1, 0.25, 0.40, 0.55, 0.65]
-    step = [500, 500, 500, 500, 500]
+    step = [500, 500, 500, 500, 500]"""
 
     control = RobotControl(0.01)
 
