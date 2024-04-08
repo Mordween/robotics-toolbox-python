@@ -14,14 +14,11 @@ class RobotControl():
 
 
     def move(self, positionX, positionY, positionZ, numberOfSteps):
-        robotJointsStates = np.zeros(6) 
-        for joint in range(5):
-            robotJointsStates[joint] = self.robot.q[joint]
 
         Tep = sm.SE3.Trans(positionX, positionY, positionZ) * sm.SE3.OA([1, 0,1], [0, 0, -1])
         sol = self.robot.ik_LM(Tep)         # solve IK
 
-        qt = rtb.jtraj(robotJointsStates, sol[0], numberOfSteps)
+        qt = rtb.jtraj(self.robot.q, sol[0], numberOfSteps)
         #print(qt.q[numberOfSteps-1])
         for steps in range(numberOfSteps):
             self.robot.q = qt.q[steps]
@@ -40,10 +37,9 @@ if __name__ == "__main__":  # pragma nocover
     env = swift.Swift()
     env.launch(realtime = True)
 
-    lite = rtb.models.Lite6()
-    lite.q = lite.qr
+    robot = rtb.models.Lite6()
 
-    rob = RobotControl(0.1, env, lite)
+    rob = RobotControl(0.1, env, robot)
 
     positionX = [0.15, 0.15, 0.35]
     positionY = [-0.2, -0.2, 0.2]
