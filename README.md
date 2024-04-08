@@ -119,6 +119,10 @@ To install the bleeding-edge version from GitHub
 git clone https://github.com/petercorke/robotics-toolbox-python.git
 cd robotics-toolbox-python
 pip3 install -e .
+cd rtb-data
+pip3 install -e .
+cd ../swift/
+pip3 install -e .
 ```
 
 <br>
