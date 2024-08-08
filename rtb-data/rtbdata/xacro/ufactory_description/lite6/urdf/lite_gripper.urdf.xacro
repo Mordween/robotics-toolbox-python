@@ -32,9 +32,9 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh filename="file:///$(find xarm_description)/meshes/lite6/visual/gripper_lite.stl"/>
+        <mesh filename="package://ufactory_description/lite6/meshes/visual/gripper_lite.glb"/>
       </geometry>
-      <material name="White">
+      <material name="White_gripper">
         <color rgba="1.0 1.0 1.0 1.0"/>
       </material>
     </visual>
@@ -43,7 +43,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh filename="file:///$(find xarm_description)/meshes/lite6/collision/gripper_lite.stl"/>
+        <mesh filename="package://ufactory_description/lite6/meshes/collision/gripper_lite.glb"/>
       </geometry>
     </collision>
   </link>

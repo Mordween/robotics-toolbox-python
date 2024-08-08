@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding='utf-8'?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="lite6">
-	<xacro:property name="pi" value="3.14159" />
-	
-	
-	<xacro:macro name="lite6" params="prefix
-		joint1_lower_limit  joint1_upper_limit
-		joint2_lower_limit  joint2_upper_limit
-		joint3_lower_limit  joint3_upper_limit
-		joint4_lower_limit  joint4_upper_limit
-		joint5_lower_limit  joint5_upper_limit
-		joint6_lower_limit  joint6_upper_limit"
+  <xacro:macro name="lite6_urdf" params="prefix
+    joint1_lower_limit:=${-2.0*pi}  joint1_upper_limit:=${2.0*pi}
+    joint2_lower_limit:=${-2.61799}  joint2_upper_limit:=${2.61799}
+    joint3_lower_limit:=${-0.061087}  joint3_upper_limit:=${5.235988}
+    joint4_lower_limit:=${-2.0*pi}  joint4_upper_limit:=${2.0*pi}
+    joint5_lower_limit:=${-2.1642}  joint5_upper_limit:=${2.1642}
+    joint6_lower_limit:=${-2.0*pi}  joint6_upper_limit:=${2.0*pi}"
     >
-	
+
     <material name="${prefix}White">
       <color rgba="1.0 1.0 1.0 1.0"/>
     </material>
@@ -24,7 +21,7 @@
       <inertial>
         <origin
           xyz="-0.00829544579053192 3.26357432323433E-05 0.0631194584987089"
-          rpy="0 0 ${pi/2}" />
+          rpy="0 0 0" />
         <mass
           value="1.65393501783165" />
         <inertia
@@ -40,7 +37,7 @@
           xyz="0 0 0"
           rpy="0 0 0" />
         <geometry>
-          <mesh filename="../meshes/visual/base.stl"/>
+          <mesh filename="package://ufactory_description/lite6/meshes/visual/base.glb"/>
         </geometry>
         <material name="${prefix}White" />
       </visual>
@@ -49,7 +46,7 @@
           xyz="0 0 0"
           rpy="0 0 0" />
         <geometry>
-          <mesh filename="../meshes/collision/base.stl"/>
+          <mesh filename="package://ufactory_description/lite6/meshes/visual/base.glb"/>
         </geometry>
       </collision>
     </link>
@@ -73,7 +70,7 @@
           xyz="0 0 0"
           rpy="0 0 0" />
         <geometry>
-          <mesh filename="../meshes/visual/link1.stl"/>
+          <mesh filename="package://ufactory_description/lite6/meshes/visual/link1.glb"/>
         </geometry>
         <material name="${prefix}White" />
       </visual>
@@ -82,7 +79,7 @@
           xyz="0 0 0"
           rpy="0 0 0" />
         <geometry>
-          <mesh filename="../meshes/collision/link1.stl"/>
+          <mesh filename="package://ufactory_description/lite6/meshes/visual/link1.glb"/>
         </geometry>
       </collision>
     </link>
@@ -123,7 +120,7 @@
           xyz="0 0 0"
           rpy="0 0 0" />
         <geometry>
-           <mesh filename="../meshes/visual/link2.stl"/>
+           <mesh filename="package://ufactory_description/lite6/meshes/visual/link2.glb"/>
         </geometry>
         <material name="${prefix}White" />
       </visual>
@@ -132,7 +129,7 @@
           xyz="0 0 0"
           rpy="0 0 0" />
         <geometry>
-           <mesh filename="../meshes/collision/link2.stl"/>
+           <mesh filename="package://ufactory_description/lite6/meshes/visual/link2.glb"/>
         </geometry>
       </collision>
     </link>
@@ -173,7 +170,7 @@
           xyz="0 0 0"
           rpy="0 0 0" />
         <geometry>
-           <mesh filename="../meshes/visual/link3.stl"/>
+           <mesh filename="package://ufactory_description/lite6/meshes/visual/link3.glb"/>
         </geometry>
         <material name="${prefix}White" />
       </visual>
@@ -182,7 +179,7 @@
           xyz="0 0 0"
           rpy="0 0 0" />
         <geometry>
-           <mesh filename="../meshes/collision/link3.stl"/>
+           <mesh filename="package://ufactory_description/lite6/meshes/visual/link3.glb"/>
         </geometry>
       </collision>
     </link>
@@ -223,7 +220,7 @@
           xyz="0 0 0"
           rpy="0 0 0" />
         <geometry>
-           <mesh filename="../meshes/visual/link4.stl"/>
+           <mesh filename="package://ufactory_description/lite6/meshes/visual/link4.glb"/>
         </geometry>
         <material name="${prefix}White" />
       </visual>
@@ -232,7 +229,7 @@
           xyz="0 0 0"
           rpy="0 0 0" />
         <geometry>
-           <mesh filename="../meshes/collision/link4.stl"/>
+           <mesh filename="package://ufactory_description/lite6/meshes/visual/link4.glb"/>
         </geometry>
       </collision>
     </link>
@@ -273,7 +270,7 @@
           xyz="0 0 0"
           rpy="0 0 0" />
         <geometry>
-           <mesh filename="../meshes/visual/link5.stl"/>
+           <mesh filename="package://ufactory_description/lite6/meshes/visual/link5.glb"/>
         </geometry>
         <material name="${prefix}White" />
       </visual>
@@ -282,7 +279,7 @@
           xyz="0 0 0"
           rpy="0 0 0" />
         <geometry>
-           <mesh filename="../meshes/collision/link5.stl"/>
+           <mesh filename="package://ufactory_description/lite6/meshes/visual/link5.glb"/>
         </geometry>
       </collision>
     </link>
@@ -323,7 +320,7 @@
           xyz="0 0 0"
           rpy="0 0 0" />
         <geometry>
-           <mesh filename="../meshes/visual/link6.stl"/>
+           <mesh filename="package://ufactory_description/lite6/meshes/visual/link6.glb"/>
         </geometry>
         <material name="${prefix}Silver" />
       </visual>
@@ -332,7 +329,7 @@
           xyz="0 0 0"
           rpy="0 0 0" />
         <geometry>
-           <mesh filename="../meshes/collision/link6.stl"/>
+           <mesh filename="package://ufactory_description/lite6/meshes/visual/link6.glb"/>
         </geometry>
       </collision>
     </link>
@@ -354,42 +351,7 @@
       <dynamics damping="1.0" friction="1.0"/>
     </joint>
 
-
-
-    <link name="link_eef">
-    <inertial>
-        <origin
-          xyz="0.0 0 0"
-          rpy="0 0 0" />
-        <mass
-          value="0.180" />
-        <inertia
-          ixx="7.726E-05"
-          ixy="1E-06"
-          ixz="4E-07"
-          iyy="8.5665E-05"
-          iyz="-6E-07"
-          izz="1.4814E-04" />
-      </inertial>
-      <visual>
-        <origin
-          xyz="0 0 0"
-          rpy="0 0 0" />
-        <geometry>
-          <mesh filename="../meshes/visual/gripper_lite.stl"/>
-        </geometry>
-        <material name="Silver" />
-      </visual>
-      <collision>
-        <origin
-          xyz="0 0 0"
-          rpy="0 0 0" />
-        <geometry>
-          <mesh filename="../meshes/collision/gripper_lite.stl"/>
-        </geometry>
-      </collision>
-    </link>
-
+    <link name="${prefix}link_eef" />
 
     <joint
       name="${prefix}joint_eef"
@@ -402,14 +364,6 @@
       <child
         link="${prefix}link_eef" />
     </joint>
-    
-    <!-- ROS link_base to ABB World Coordinates transform -->
-    <link name="${prefix}base" />
-    <joint name="${prefix}link_base-base" type="fixed">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <parent link="${prefix}link_base"/>
-      <child link="${prefix}base"/>
-    </joint>
   </xacro:macro>
-  <!--<xacro:lite6_urdf prefix=""/> -->
+  <xacro:lite6_urdf prefix=""/>
 </robot>

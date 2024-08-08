@@ -9,7 +9,7 @@ class Lite6(Robot):
     """
     Class that imports a Panda URDF model
 
-    ``Panda()`` is a class which imports a Franka-Emika Panda robot definition
+    ``Lite6()`` is a class which imports a u-factory lite6 robot definition
     from a URDF file.  The model describes its kinematic and graphical
     characteristics.
 
@@ -26,8 +26,6 @@ class Lite6(Robot):
     - qs, arm is stretched out in the x-direction
     - qn, arm is at a nominal non-singular configuration
 
-    .. codeauthor:: Jesse Haviland
-    .. sectionauthor:: Peter Corke
     """
 
     def __init__(self):
